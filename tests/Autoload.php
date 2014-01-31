@@ -7,7 +7,11 @@ spl_autoload_register(
         static $classes = null;
         if ($classes === null) {
             $classes = array(
-                'terminator\\out' => '/../src/Terminator/Out.php'
+                'terminator\\interfaces\\style' => '/../src/Terminator/Interfaces/Style.php',
+                'terminator\\nostyle' => '/../src/Terminator/NoStyle.php',
+                'terminator\\out' => '/../src/Terminator/Out.php',
+                'terminator\\outtest' => '/src/OutTest.php',
+                'terminator\\style' => '/../src/Terminator/Style.php'
             );
         }
         $cn = strtolower($class);
