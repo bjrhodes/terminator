@@ -21,7 +21,7 @@ class Out
     }
     public function bg($style = null)
     {
-        $style = 'bg_' . $style;
+        $style = (strpos($style, 'bg_') === 0) ? $style : 'bg_' . $style;
         $this->buffer .= $this->Style->render($style);
         return $this;
     }

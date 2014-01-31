@@ -42,4 +42,18 @@ ABCDEFGHIJ ABC", $this->Object->flush());
         $this->assertEquals("ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJ
 ABCDEFGHIJ", $this->Object->flush());
     }
+
+    public function testPutDoesntBreakLinesIfLineBreakIsZero()
+    {
+        $ZeroBreak = new Out(0);
+        $ZeroBreak->put("ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJ");
+        $this->assertEquals("ABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJABCDEFGHIJ", $ZeroBreak->flush());
+    }
+
+    public function testFlushWillSpitOutStuffAnnoyinglyIfYouTellItToWhatIsThisNowWordpress()
+    {
+        $this->expectOutputString('ABCDEFGHIJKL');
+        $this->Object->put('ABCDEFGHIJKL');
+        $this->Object->flush(true);
+    }
 }
