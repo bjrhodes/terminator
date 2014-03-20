@@ -1,6 +1,18 @@
 {
+    "name": "bjrhodes/terminator",
+    "description": "Helper functionality for command line / terminal interfaces",
     "minimum-stability": "dev",
-    "require": {
+    "authors": [
+        {
+            "name": "Barry Rhodes",
+            "email": "bjrhodes199@hotmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"Terminator\\": "src/Terminator"}
+    },
+    "require": {},
+    "require-dev": {
         "pdepend/pdepend" : "1.1.0",
         "phpmd/phpmd" : "1.4.*",
         "squizlabs/php_codesniffer": "1.*",
