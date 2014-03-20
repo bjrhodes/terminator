@@ -55,6 +55,14 @@ Set a background colour (with bg() and fg() no args means reset) :
         ->bg()
         ->flush();
 
+Flush expects you'll be capturing the output into a variable for later use. To
+push to output immediately, pass in true:
+
+    $Out = new Terminator\Out();
+    $Out->put('This is some text that will magically appear!')
+         ->newLine()
+         ->flush(true);
+
 
 ## Building it
 
