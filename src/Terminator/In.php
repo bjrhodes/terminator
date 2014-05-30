@@ -8,4 +8,16 @@ class In
     {
         return readline($prompt);
     }
+
+    public function getParameters()
+    {
+        global $argv;
+        $params = (array) $argv;
+
+        if (count($params)) {     // might not be called in cli context?!
+            array_shift($params); // lose the script name
+        }
+
+        return $params;
+    }
 }
